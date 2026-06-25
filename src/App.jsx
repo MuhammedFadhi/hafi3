@@ -144,7 +144,7 @@ function App() {
             <div className="env-names-display">
               <span className="env-disp-name">Hafeesha<br />K H</span>
               <span className="env-disp-sep">✦</span>
-              <span className="env-disp-name">Afzal Abdul Azeez</span>
+              <span className="env-disp-name">Afzal Abdul<br />Azeez</span>
             </div>
             <p className="env-disp-date">Nikah · Thursday, 30 July 2026</p>
             {!isEnvelopeOpen && <p className="env-tap-hint">— TAP TO OPEN —</p>}
@@ -205,7 +205,7 @@ function App() {
             <div className="detail-icon"><img src="https://fidhaashmil.vercel.app/assets/svg/icon-time.svg" width="22" height="22" alt="" /></div>
             <div className="detail-body">
               <span className="detail-label">Nikah</span>
-              <p className="detail-value">10:00 AM onwards</p>
+              <p className="detail-value">10:30 AM – 11:30 AM</p>
             </div>
           </article>
           <article className="detail-item reveal rd3">
