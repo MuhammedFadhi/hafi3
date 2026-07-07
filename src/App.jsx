@@ -156,79 +156,75 @@ function App() {
           onClick={handleTap}
           onTouchStart={handleTap}
         >
-          {/* Envelope flap — flips open on tap */}
-          <div className={`env-flap ${isEnvelopeOpen ? 'env-flap--open' : ''}`}>
-            <div className="env-flap-front">
-              <svg className="env-flap-crease" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M0 0 L50 100 L100 0" fill="none" stroke="#8c6c35" strokeWidth="0.5" opacity="0.4" />
-                <path d="M0.6 0.6 L50 98.7 L99.4 0.6" fill="none" stroke="#fff8e8" strokeWidth="0.4" opacity="0.5" />
-              </svg>
-            </div>
-            <div className="env-flap-back" />
-          </div>
-
-          {/* Top calligraphy */}
-          <div className="env-header">
+          <div className={`env-header ${isEnvelopeOpen ? 'new-env-header--fade' : ''}`}>
             <div className="env-header-line" />
             <p className="env-eyebrow">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
             <div className="env-header-line" />
           </div>
 
-          {/* Wax-seal tap button */}
-          <button
-            type="button"
-            className={`env-seal-btn ${isEnvelopeOpen ? 'env-seal-btn--pressed' : ''}`}
-            aria-label="Tap to open the invitation"
-          >
-            <svg width="132" height="132" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <radialGradient id="wg" cx="35%" cy="28%" r="72%">
-                  <stop offset="0%" stopColor="#ffffff" />
-                  <stop offset="40%" stopColor="#f8f0dc" />
-                  <stop offset="75%" stopColor="#ecdbb8" />
-                  <stop offset="100%" stopColor="#d4b87a" />
-                </radialGradient>
-                <radialGradient id="wg2" cx="40%" cy="35%" r="60%">
-                  <stop offset="0%" stopColor="rgba(255,255,255,0.6)" />
-                  <stop offset="100%" stopColor="rgba(255,255,255,0)" />
-                </radialGradient>
-                <filter id="wf" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="4" stdDeviation="7" floodColor="#6b4f1e" floodOpacity="0.35" />
-                </filter>
-              </defs>
-              {/* Wavy wax blob */}
-              <path
-                d="M90 10 C106 6 122 14 134 24 C148 36 158 52 158 68 C160 82 162 96 156 110 C150 126 140 140 126 150 C112 160 96 168 80 166 C64 164 48 156 36 144 C22 130 12 112 10 94 C8 76 14 58 26 44 C38 30 56 16 74 11 Z"
-                fill="url(#wg)"
-                filter="url(#wf)"
-              />
-              {/* Specular highlight */}
-              <path
-                d="M90 10 C106 6 122 14 134 24 C148 36 158 52 158 68 C160 82 162 96 156 110 C150 126 140 140 126 150 C112 160 96 168 80 166 C64 164 48 156 36 144 C22 130 12 112 10 94 C8 76 14 58 26 44 C38 30 56 16 74 11 Z"
-                fill="url(#wg2)"
-              />
-              {/* Inner rings */}
-              <circle cx="90" cy="90" r="64" fill="none" stroke="#c09a58" strokeWidth="1.5" opacity="0.7" />
-              <circle cx="90" cy="90" r="58" fill="none" stroke="#c09a58" strokeWidth="0.6" strokeDasharray="2 3.5" opacity="0.5" />
-              {/* Engraved label */}
-              <text x="90" y="86" fontFamily="'Cinzel', serif" fontSize="21" fontWeight="600" letterSpacing="2" fill="#8c6c35" textAnchor="middle" opacity="0.92">TAP</text>
-              <text x="90" y="108" fontFamily="'Cinzel', serif" fontSize="15" letterSpacing="1.5" fill="#8c6c35" textAnchor="middle" opacity="0.85">TO OPEN</text>
-              <path d="M74 96 q16 8 32 0" stroke="#8c6c35" strokeWidth="1" fill="none" opacity="0.6" />
-            </svg>
-          </button>
+          <div className="new-env-wrapper">
+            <div className={`new-env-hearts ${isEnvelopeOpen ? 'new-env-hearts--fly' : ''}`}>
+               <svg viewBox="0 0 32 29.6" className="new-heart h1"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2 c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" fill="#ff4d4d"/></svg>
+               <svg viewBox="0 0 32 29.6" className="new-heart h2"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2 c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" fill="#ff1a1a"/></svg>
+               <svg viewBox="0 0 32 29.6" className="new-heart h3"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2 c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" fill="#cc0000"/></svg>
+               <svg viewBox="0 0 32 29.6" className="new-heart h4"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2 c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" fill="#ff4d4d"/></svg>
+               <svg viewBox="0 0 32 29.6" className="new-heart h5"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2 c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" fill="#ff1a1a"/></svg>
+               <svg viewBox="0 0 32 29.6" className="new-heart h6"><path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2 c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" fill="#cc0000"/></svg>
+            </div>
+            
+            <div className="new-env-body">
+              <div className="new-env-back" />
+              <div className={`new-env-top-flap ${isEnvelopeOpen ? 'new-env-top-flap--open' : ''}`} />
+              <div className="new-env-front-left" />
+              <div className="new-env-front-right" />
+              <div className="new-env-front-bottom" />
+              
+              <button
+                type="button"
+                className={`env-seal-btn new-env-seal-abs ${isEnvelopeOpen ? 'env-seal-btn--pressed' : ''}`}
+                aria-label="Tap to open the invitation"
+              >
+                <svg width="110" height="110" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="wg" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#f3e8ca" />
+                      <stop offset="50%" stopColor="#e3cd96" />
+                      <stop offset="100%" stopColor="#d1b268" />
+                    </linearGradient>
+                    <linearGradient id="wg2" x1="0" y1="1" x2="1" y2="0">
+                      <stop offset="0%" stopColor="rgba(255,255,255,0.7)" />
+                      <stop offset="40%" stopColor="rgba(255,255,255,0)" />
+                      <stop offset="100%" stopColor="rgba(0,0,0,0.15)" />
+                    </linearGradient>
+                    <filter id="wf" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#6b4f1e" floodOpacity="0.25" />
+                    </filter>
+                  </defs>
+                  <path
+                    d="M90 10 C106 6 122 14 134 24 C148 36 158 52 158 68 C160 82 162 96 156 110 C150 126 140 140 126 150 C112 160 96 168 80 166 C64 164 48 156 36 144 C22 130 12 112 10 94 C8 76 14 58 26 44 C38 30 56 16 74 11 Z"
+                    fill="url(#wg)"
+                    filter="url(#wf)"
+                  />
+                  <path
+                    d="M90 10 C106 6 122 14 134 24 C148 36 158 52 158 68 C160 82 162 96 156 110 C150 126 140 140 126 150 C112 160 96 168 80 166 C64 164 48 156 36 144 C22 130 12 112 10 94 C8 76 14 58 26 44 C38 30 56 16 74 11 Z"
+                    fill="url(#wg2)"
+                  />
+                  <circle cx="90" cy="90" r="64" fill="none" stroke="#a38241" strokeWidth="1" opacity="0.6" />
+                  <circle cx="90" cy="90" r="58" fill="none" stroke="#a38241" strokeWidth="0.5" strokeDasharray="2 3.5" opacity="0.5" />
+                  <text x="90" y="86" fontFamily="'Cinzel', serif" fontSize="21" fontWeight="600" letterSpacing="2" fill="#806227" textAnchor="middle" opacity="0.95">TAP</text>
+                  <text x="90" y="108" fontFamily="'Cinzel', serif" fontSize="15" letterSpacing="1.5" fill="#806227" textAnchor="middle" opacity="0.9">TO OPEN</text>
+                  <path d="M74 96 q16 8 32 0" stroke="#806227" strokeWidth="1" fill="none" opacity="0.7" />
+                </svg>
+              </button>
+            </div>
+          </div>
 
-          <svg className="env-flourish" viewBox="0 0 140 24" aria-hidden="true">
-            <path d="M2 12h44M94 12h44" stroke="var(--gold)" strokeWidth="1" />
-            <path d="M46 12c6-10 14-10 20 0 6 10 14 10 20 0" stroke="var(--gold)" strokeWidth="1" fill="none" />
-          </svg>
-
-          {/* Bottom info */}
-          <div className="env-footer">
+          <div className={`env-footer ${isEnvelopeOpen ? 'new-env-header--fade' : ''}`}>
             <p className="env-invited">You Are Invited <span className="env-invited-heart">♥</span></p>
             <p className="env-names-line">
               <em className="env-disp-title">Dr.</em> Afzal Abdul Azeez <span className="env-disp-sep">&amp;</span> Hafeesha K H
             </p>
-            <p className="env-disp-date">Nikah · Thursday, 30 July 2026</p>
+            <p className="env-disp-date">Reception · Monday, 3 August 2026</p>
           </div>
         </div>
       )}
@@ -246,43 +242,24 @@ function App() {
           onTouchEnd={handleCardLeave}
         >
           <div className="ic-glow" aria-hidden="true" />
-          <svg className="ic-frame" viewBox="0 0 100 150" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="ic-goldline" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stopColor="#8c6c35" />
-                <stop offset=".5" stopColor="#eccd8e" />
-                <stop offset="1" stopColor="#8c6c35" />
-              </linearGradient>
-            </defs>
-            <path d="M50 2 C22 2 8 15 8 38 L8 148 M50 2 C78 2 92 15 92 38 L92 148" />
+          
+          <svg className="ic-arch-outline" viewBox="0 0 100 150" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M50 2 C22 2 8 15 8 38 L8 148 L92 148 L92 38 C92 15 78 2 50 2 Z" fill="none" stroke="#a38241" strokeWidth="1.5" />
           </svg>
 
           <svg className="ic-lantern ic-lantern--left" viewBox="0 0 24 40" fill="none" aria-hidden="true">
-            <line x1="12" y1="0" x2="12" y2="6" stroke="#8c6c35" strokeWidth="1.4" />
-            <path d="M6 6h12l-2 4H8z" fill="#af8f56" />
-            <rect x="7" y="10" width="10" height="16" rx="2" fill="#eccd8e" stroke="#8c6c35" strokeWidth="1" />
+            <line x1="12" y1="0" x2="12" y2="6" stroke="#a38241" strokeWidth="1.4" />
+            <path d="M6 6h12l-2 4H8z" fill="#806227" />
+            <rect x="7" y="10" width="10" height="16" rx="2" fill="#d1b268" stroke="#a38241" strokeWidth="1" />
             <circle cx="12" cy="18" r="3" fill="#fff4d6" />
-            <path d="M8 26h8l-2 4h-4z" fill="#af8f56" />
+            <path d="M8 26h8l-2 4h-4z" fill="#806227" />
           </svg>
           <svg className="ic-lantern ic-lantern--right" viewBox="0 0 24 40" fill="none" aria-hidden="true">
-            <line x1="12" y1="0" x2="12" y2="6" stroke="#8c6c35" strokeWidth="1.4" />
-            <path d="M6 6h12l-2 4H8z" fill="#af8f56" />
-            <rect x="7" y="10" width="10" height="16" rx="2" fill="#eccd8e" stroke="#8c6c35" strokeWidth="1" />
+            <line x1="12" y1="0" x2="12" y2="6" stroke="#a38241" strokeWidth="1.4" />
+            <path d="M6 6h12l-2 4H8z" fill="#806227" />
+            <rect x="7" y="10" width="10" height="16" rx="2" fill="#d1b268" stroke="#a38241" strokeWidth="1" />
             <circle cx="12" cy="18" r="3" fill="#fff4d6" />
-            <path d="M8 26h8l-2 4h-4z" fill="#af8f56" />
-          </svg>
-
-          <svg className="ic-floral ic-floral--tl" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <path d="M4 4 C18 6 28 14 32 28" stroke="#af8f56" strokeWidth="1.2" opacity="0.7" />
-            <circle cx="10" cy="10" r="5" fill="#c08768" opacity="0.55" />
-            <circle cx="18" cy="16" r="3.2" fill="#d9c5a3" opacity="0.8" />
-            <circle cx="26" cy="24" r="2.4" fill="#af8f56" opacity="0.6" />
-          </svg>
-          <svg className="ic-floral ic-floral--tr" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <path d="M4 4 C18 6 28 14 32 28" stroke="#af8f56" strokeWidth="1.2" opacity="0.7" />
-            <circle cx="10" cy="10" r="5" fill="#c08768" opacity="0.55" />
-            <circle cx="18" cy="16" r="3.2" fill="#d9c5a3" opacity="0.8" />
-            <circle cx="26" cy="24" r="2.4" fill="#af8f56" opacity="0.6" />
+            <path d="M8 26h8l-2 4h-4z" fill="#806227" />
           </svg>
 
           <div className="ic-content">
@@ -294,28 +271,31 @@ function App() {
             </svg>
 
             <p className="ic-eyebrow" style={{ '--d': '.15s' }}>
-              &ldquo;In the name of Allah,<br />the Most Gracious and the Most Merciful&rdquo;
+              &ldquo;In the name of Allah,<br />the Most Gracious and<br />the Most Merciful&rdquo;
             </p>
 
-            <p className="ic-hosts" style={{ '--d': '.22s' }}>Mr. Abdul Azeez &amp; Mrs. Nazeema</p>
+            <p className="ic-hosts" style={{ '--d': '.22s' }}>MR. ABDUL AZEEZ &amp; MRS. NAZEEMA</p>
             <p className="ic-subtext" style={{ '--d': '.28s' }}>
               Anjilimoottil, K.S.Puram P.O., Karunagappally<br />
               Ph: 7034741483, 8089944183
             </p>
 
             <div className="ic-divider" style={{ '--d': '.34s' }}>
-              <svg viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#af8f56" /></svg>
+              <div className="ic-div-line"></div>
+              <div className="ic-div-diamond"></div>
+              <div className="ic-div-line"></div>
             </div>
 
             <p className="ic-lede" style={{ '--d': '.4s' }}>
-              We cordially invite your esteemed presence with family<br />
+              We cordially invite your esteemed<br />
+              presence with family<br />
               for the marriage ceremony of our son
             </p>
 
             <div className="ic-couple" style={{ '--d': '.48s' }}>
               <span className="name">Dr. Afzal Abdul Azeez</span>
               <span className="ic-amp">&amp;</span>
-              <span className="name">Hafeesha K&nbsp;H</span>
+              <span className="name">Hafeesha K H</span>
             </div>
 
             <p className="ic-bride-meta" style={{ '--d': '.54s' }}>
@@ -324,37 +304,24 @@ function App() {
             </p>
 
             <div className="ic-divider" style={{ '--d': '.6s' }}>
-              <svg viewBox="0 0 24 24"><path d="M12 2c3 4 3 8 0 12-3-4-3-8 0-12z" fill="#af8f56" /></svg>
+              <div className="ic-div-line"></div>
+              <div className="ic-div-diamond"></div>
+              <div className="ic-div-line"></div>
             </div>
 
-            <p className="ic-insha" style={{ '--d': '.66s' }}>Insha&rsquo;Allah on</p>
+            <p className="ic-insha" style={{ '--d': '.66s' }}>INSHA&rsquo;ALLAH ON<br/>AUGUST</p>
 
             <div className="ic-date" style={{ '--d': '.72s' }}>
-              <div className="ic-month">JULY</div>
-              <div className="ic-dayline">
-                <span className="ic-day">THURSDAY</span>
-                <span className="ic-num">30</span>
-                <span className="ic-time">11:30 Noon</span>
-              </div>
-              <div className="ic-year">2026</div>
-              <div className="ic-hijri">(Safar 16, 1448)</div>
+              <span className="ic-day">MONDAY</span>
+              <span className="ic-num">3</span>
+              <span className="ic-time">5:30 PM</span>
             </div>
+            <div className="ic-year" style={{ '--d': '.72s' }}>2026</div>
 
             <div style={{ '--d': '.78s' }}>
-              <p className="ic-venue-tag">Venue</p>
-              <p className="ic-venue-name">ASCO Convention Centre<br />Ottappalam</p>
+              <p className="ic-venue-tag">VENUE</p>
+              <p className="ic-venue-name">Oryx Convention Centre<br />Manjadi Junction, Oachira</p>
             </div>
-          </div>
-
-          <div className="ic-reception">
-            <p className="ic-r-tag">Reception</p>
-            <p className="ic-r-date">3 August 2026</p>
-            <p className="ic-r-venue">Oryx Convention Centre<br />Manjadi Junction, Oachira</p>
-            <p className="ic-r-time">Between 5:30 PM &amp; 9:00 PM</p>
-            <p className="ic-share">
-              Sharing the happiness<br />
-              <span className="names">Afnan &amp; Althaf</span>
-            </p>
           </div>
         </div>
         </div>
@@ -393,34 +360,17 @@ function App() {
             <div className="detail-icon"><IconCalendar /></div>
             <div className="detail-body">
               <span className="detail-label">Date</span>
-              <p className="detail-value">Thursday, 30th July 2026<br /><span style={{ fontSize: '0.8em', color: 'var(--textmid)' }}>Safar 16, 1448</span></p>
+              <p className="detail-value">Monday, 3rd August 2026</p>
             </div>
           </article>
           <article className="detail-item reveal rd2">
             <div className="detail-icon"><IconClock /></div>
             <div className="detail-body">
-              <span className="detail-label">Nikah</span>
-              <p className="detail-value">11:30 AM Noon</p>
+              <span className="detail-label">Time</span>
+              <p className="detail-value">Between 5:30 PM &amp; 9:00 PM</p>
             </div>
           </article>
           <article className="detail-item detail-item--last reveal rd3">
-            <div className="detail-icon"><IconPin /></div>
-            <div className="detail-body">
-              <span className="detail-label">Venue</span>
-              <p className="detail-value">ASCO Convention Centre<br />Ottappalam</p>
-            </div>
-          </article>
-        </div>
-
-        <div className="details-card reveal" style={{ marginTop: '1rem' }}>
-          <article className="detail-item reveal rd1">
-            <div className="detail-icon"><IconRing /></div>
-            <div className="detail-body">
-              <span className="detail-label">Reception</span>
-              <p className="detail-value">Monday, 3rd August 2026<br />Between 5:30 PM &amp; 9:00 PM</p>
-            </div>
-          </article>
-          <article className="detail-item detail-item--last reveal rd2">
             <div className="detail-icon"><IconPin /></div>
             <div className="detail-body">
               <span className="detail-label">Venue</span>
@@ -438,15 +388,7 @@ function App() {
           <div className="sec-orn reveal rd2"><span className="ol" /><span className="od" /><span className="ol" /></div>
         </div>
 
-        <p className="vname reveal">ASCO Convention Centre<br /><span style={{ fontSize: '0.75em', color: 'var(--textmid)', fontStyle: 'normal' }}>Nikah &amp; Wedding · Ottappalam</span></p>
-        <div className="map-box reveal">
-          <iframe src="https://maps.google.com/maps?q=ASCO+Convention+Centre+Ottappalam&output=embed" allowFullScreen loading="lazy" title="ASCO Convention Centre map" />
-        </div>
-        <a className="map-btn reveal" href="https://maps.google.com/maps?q=ASCO+Convention+Centre+Ottappalam" target="_blank" rel="noopener noreferrer">
-          📍 &nbsp;GET DIRECTIONS ON GOOGLE MAPS
-        </a>
-
-        <p className="vname reveal" style={{ marginTop: '2.4rem' }}>Oryx Convention Centre<br /><span style={{ fontSize: '0.75em', color: 'var(--textmid)', fontStyle: 'normal' }}>Reception · Manjadi Junction, Oachira</span></p>
+        <p className="vname reveal">Oryx Convention Centre<br /><span style={{ fontSize: '0.75em', color: 'var(--textmid)', fontStyle: 'normal' }}>Reception · Manjadi Junction, Oachira</span></p>
         <div className="map-box reveal">
           <iframe src="https://maps.google.com/maps?q=Oryx+Convention+Centre+Manjadi+Junction+Oachira&output=embed" allowFullScreen loading="lazy" title="Oryx Convention Centre map" />
         </div>
@@ -471,14 +413,11 @@ function App() {
         </div>
         <p className="cl-sub reveal">TOGETHER WITH THEIR FAMILIES</p>
         <p className="cl-body reveal">
-          Joyfully invite you to witness<br />
-          the blessed union of our Nikah.<br /><br />
+          Joyfully invite you to celebrate<br />
+          with us at our Reception.<br /><br />
           Your presence, heartfelt prayers &amp;<br />
           warm blessings are the greatest gift<br />
           you could bring to this beautiful day.<br /><br />
-          <strong>Thursday, 30th July 2026</strong><br />
-          <strong>11:30 AM · ASCO Convention Centre</strong><br />
-          <span style={{ fontSize: '0.9em' }}>Ottappalam</span><br /><br />
           <strong>Reception · Monday, 3rd August 2026</strong><br />
           <strong>5:30 PM – 9:00 PM · Oryx Convention Centre</strong><br />
           <span style={{ fontSize: '0.9em' }}>Manjadi Junction, Oachira</span>
@@ -508,7 +447,6 @@ function App() {
       <footer>
         <p>
           🤍 &nbsp; DR. AFZAL ABDUL AZEEZ &amp; HAFEESHA K H &nbsp; 🤍<br />
-          NIKAH · THURSDAY 30 JULY 2026 · 11:30 AM · ASCO CONVENTION CENTRE, OTTAPPALAM<br />
           RECEPTION · MONDAY 3 AUGUST 2026 · 5:30–9:00 PM · ORYX CONVENTION CENTRE, OACHIRA
         </p>
       </footer>
